@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, send_from_directory
 import requests
 import pymongo
+import os
 
 app = Flask(__name__)
 
 MONGO_DB = None 
 def connectToDatabase():
 	global MONGO_DB
-	client = pymongo.MongoClient("mongodb+srv://admin:admin@cluster0.3fqn2.mongodb.net/?retryWrites=true&w=majority")
+	client = pymongo.MongoClient(os.environ.get("MONGODB_URI"))
 	MONGO_DB = client["acm-task"]
 
 @app.route('/')
