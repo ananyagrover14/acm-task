@@ -40,6 +40,9 @@ def insert():
 def send_js(path):
     return send_from_directory('static', path)
 
+
+# Connect to database
+connectToDatabase() 
+
 if __name__ == '__main__':
-   connectToDatabase() 
-   app.run(debug = True)  
+	app.run(debug = True)  
