@@ -1,1 +1,1 @@
-web: gunicorn Task/app.py:app
+web: sh -c 'cd ./Task/ && gunicorn app:app'
