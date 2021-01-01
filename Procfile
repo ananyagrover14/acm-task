@@ -1,1 +1,1 @@
-web: sh -c 'cd ./Task/ && gunicorn app'
+web: gunicorn Task.app
