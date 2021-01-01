@@ -1,1 +1,1 @@
-web: gunicorn Task.app
+web: gunicorn --pythonpath Task app:app
